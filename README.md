@@ -30,3 +30,6 @@ Welcome to the Travel Recommendation Chatbot! This chatbot provides personalized
  - Create your API Key for Groq here: <https://console.groq.com/keys>
  - Set up your environment variables. Create a .env file in the root directory and add your API key: `API_KEY=your_actual_api_key`
 
+## Gradio Interface
+![Alt text](https://github.com/mutemip/travel-recommendation-chatbot/blob/main/screens/Screenshot%20from%202024-10-09%2019-00-56.png)
+

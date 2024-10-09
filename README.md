@@ -22,6 +22,10 @@ Welcome to the Travel Recommendation Chatbot! This chatbot provides personalized
 3. Install the required packages:
   -`pip install -r requirements.txt`
 
+4. Run the chatbot on CLI:
+  -`python chatbot.py`
+  - Click on the <http://127.0.0.1:7867> to open on browser.
+
 ## Setup your Groq API key
  - Create your API Key for Groq here: <https://console.groq.com/keys>
  - Set up your environment variables. Create a .env file in the root directory and add your API key: `API_KEY=your_actual_api_key`

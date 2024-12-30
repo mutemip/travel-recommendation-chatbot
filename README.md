@@ -33,3 +33,5 @@ Welcome to the Travel Recommendation Chatbot! This chatbot provides personalized
 ## Gradio Interface
 ![Alt text](https://github.com/mutemip/travel-recommendation-chatbot/blob/main/screens/Screenshot%20from%202024-10-09%2019-00-56.png)
 
+## Chatbot React frontend sample
+![Alt text](https://github.com/mutemip/travel-recommendation-chatbot/blob/main/screens/Screenshot%20from%202024-12-30%2023-21-11.png)

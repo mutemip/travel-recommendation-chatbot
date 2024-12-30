@@ -1,2 +1,4 @@
 .env
 .ipynb_checkpoints
+package-lock.json
+package.json

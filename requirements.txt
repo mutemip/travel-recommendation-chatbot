@@ -31,6 +31,7 @@ cachetools==5.5.0
 catalogue==2.0.10
 certifi==2024.8.30
 cffi @ file:///croot/cffi_1726856441404/work
+chardet==3.0.4
 charset-normalizer==3.4.0
 click==8.1.7
 cloudpathlib==0.19.0
@@ -77,6 +78,7 @@ google-auth-oauthlib==1.2.1
 google-generativeai==0.8.3
 google-pasta==0.2.0
 googleapis-common-protos==1.65.0
+googletrans==4.0.0rc1
 gradio==4.44.1
 gradio_client==1.3.0
 graphene==3.3
@@ -87,14 +89,18 @@ groq==0.11.0
 grpcio==1.66.2
 grpcio-status==1.62.3
 gunicorn==23.0.0
-h11==0.14.0
+h11==0.9.0
+h2==3.2.0
 h5py==3.12.1
-httpcore==1.0.6
+hpack==3.0.0
+hstspreload==2025.1.1
+httpcore==0.9.1
 httplib2==0.22.0
-httpx==0.27.2
+httpx==0.13.3
 httpx-sse==0.4.0
 huggingface-hub==0.25.2
-idna==3.10
+hyperframe==5.2.0
+idna==2.10
 importlib-metadata==6.11.0
 importlib_resources==6.4.5
 ipykernel @ file:///croot/ipykernel_1705933831282/work
@@ -230,6 +236,7 @@ regex==2024.9.11
 requests==2.32.3
 requests-oauthlib==2.0.0
 rfc3339-validator @ file:///croot/rfc3339-validator_1683077044675/work
+rfc3986==1.5.0
 rfc3986-validator @ file:///croot/rfc3986-validator_1683058983515/work
 rich==13.9.2
 rpds-py @ file:///croot/rpds-py_1698945930462/work

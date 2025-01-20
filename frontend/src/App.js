@@ -7,6 +7,7 @@ const App = () => {
   const [models, setModels] = useState([]);
   const [model, setModel] = useState("");
   const [messages, setMessages] = useState([]);
+  const [language, setLanguage] = useState("en");
 
   // Fetch models from the backend
   useEffect(() => {
@@ -28,7 +29,7 @@ const App = () => {
   const sendMessage = async (userMessage) => {
     const newMessages = [...messages, { sender: "User", text: userMessage }];
     setMessages(newMessages);
-  
+
     try {
       const response = await fetch("http://localhost:5000/converse", {
         method: "POST",
@@ -36,6 +37,7 @@ const App = () => {
         body: JSON.stringify({
           message: userMessage,
           model, // Ensure this matches the backend expectation
+          language, // Send the selected language to the backend
         }),
       });
       const data = await response.json();
@@ -44,11 +46,10 @@ const App = () => {
       console.error("Error:", error);
     }
   };
-  
 
   return (
     <div className="app">
-      <Sidebar models={models} model={model} setModel={setModel} />
+      <Sidebar models={models} model={model} setModel={setModel} language={language} setLanguage={setLanguage} />
       <Chatbot messages={messages} onSendMessage={sendMessage} />
     </div>
   );

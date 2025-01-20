@@ -13,7 +13,7 @@ const App = () => {
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const response = await fetch("http://localhost:5000/models");
+        const response = await fetch("http://localhost:8000/models");
         const data = await response.json();
         setModels(data.models);
         if (data.models.length > 0) {
@@ -31,7 +31,7 @@ const App = () => {
     setMessages(newMessages);
 
     try {
-      const response = await fetch("http://localhost:5000/converse", {
+      const response = await fetch("http://localhost:8000/converse", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

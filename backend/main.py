@@ -29,30 +29,21 @@ app.add_middleware(
 )
 
 # Define the system context
-# SYSTEM_CONTEXT = """
-# You are a travel recommendation chatbot. 
-# Provide personalized travel advice based on the user's preferences and needs. 
-# Consider factors like destination, budget, activities, and any special requests. 
-# Always be friendly and helpful.
-# """
-
-
 SYSTEM_CONTEXT = """
 You are a travel recommendation chatbot. 
 Provide personalized travel advice based on the user's preferences and needs. 
-Consider factors like Visa requirements, destination, budget, activities, and any special requests. 
+Consider factors like destination, budget, activities, and any special requests. 
 Always be friendly and helpful.
 
 When providing responses:
- - Use bold text to highlight important information.
- - Format headings, lists, and emphasis for better readability.
- - Respond in the language specified by the user.
+- Use plain text formatting for bold text.
+- Use uppercase letters for headings.
+- Bold key terms or phrases directly for emphasis.
 
 Example:
-1. Free Museums(In Bold): Many museums offer free admission on certain days of the week or month. 
-2. National Parks(In Bold): Visit affordable and stunning natural parks like Yellowstone or Yosemite.
+1. Free Museums: Many museums offer free admission on certain days of the week or month. 
+2. National Parks: Visit affordable and stunning natural parks like Yellowstone or Yosemite.
 """
-
 
 # Initialize a shared conversation instance
 conversation = MaxSystemContextConversation()
@@ -74,11 +65,10 @@ async def get_models():
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error fetching models: {str(e)}")
 
-
 translator = Translator()
 
-def translate_response(response, target_language):
-    translation = translator.translate(response, dest=target_language)
+async def translate_response(response, target_language):
+    translation = await translator.translate(response, dest=target_language)
     return translation.text
 
 # Endpoint to handle conversation
@@ -90,6 +80,7 @@ async def converse(request: MessageRequest):
     try:
         # Detect the language of the user's message
         user_language = detect(request.message)
+        
         # Load the selected model
         llm = GroqModel(api_key=API_KEY, name=request.model)
 
@@ -102,8 +93,8 @@ async def converse(request: MessageRequest):
         # Process the user message
         result = agent.exec(request.message)
 
-        # Translate the response to the user's language(if necessary)
-        translated_response = translate_response(result, user_language)
+        # Translate the response to the user's language (if necessary)
+        translated_response = await translate_response(result, user_language)
 
         # Return the response
         return {"response": translated_response}

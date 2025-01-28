@@ -28,12 +28,12 @@
  - This will run the app in development mode. Open <http://localhost:3000> to view it in your browser.
 
 ## Components
-`App.js:` The main component that sets up the application layout and handles state management.
-`Chatbot.js:` The component that renders the chat interface and handles message display.
-`ChatInterface.jsx:` The component that provides the chat interface with input and message display.
-`InputBox.js:` The component that provides the input box for users to type messages.
-`Message.js:` The component that renders individual messages in the chat.
-`Sidebar.js:` The component that provides settings for model and language selection.
+- `App.js:` The main component that sets up the application layout and handles state management.
+- `Chatbot.js:` The component that renders the chat interface and handles message display.
+- `ChatInterface.jsx:` The component that provides the chat interface with input and message display.
+- `InputBox.js:` The component that provides the input box for users to type messages.
+- `Message.js:` The component that renders individual messages in the chat.
+- `Sidebar.js:` The component that provides settings for model and language selection.
 
 ## Configuration
 #### Environment Variables
